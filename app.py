@@ -15,7 +15,7 @@ file_path = "WhatsApp Chat with Sab Moh Maya hai 💦.txt"  # Example: "y/whatsa
 with open(file_path, 'r', encoding='utf-8') as f:
     data = f.read()
 
-df = preprocessor.preprocess(data)
+    df = preprocessor.preprocess(data)
 
     # fetch unique users
     user_list = df['user'].unique().tolist()
