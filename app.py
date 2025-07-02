@@ -4,12 +4,18 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 st.sidebar.title("Whatsapp Chat Analyzer")
+#Here it was for uploading chat but due to the deployed i have fixed with a chat.
+# uploaded_file = st.sidebar.file_uploader("Choose a file")
+# if uploaded_file is not None:
+#     bytes_data = uploaded_file.getvalue()
+#     data = bytes_data.decode("utf-8")
+#     df = preprocessor.preprocess(data)
 
-uploaded_file = st.sidebar.file_uploader("Choose a file")
-if uploaded_file is not None:
-    bytes_data = uploaded_file.getvalue()
-    data = bytes_data.decode("utf-8")
-    df = preprocessor.preprocess(data)
+file_path = "WhatsApp Chat with Sab Moh Maya hai 💦.txt"  # Example: "y/whatsapp_chat.txt"
+with open(file_path, 'r', encoding='utf-8') as f:
+    data = f.read()
+
+df = preprocessor.preprocess(data)
 
     # fetch unique users
     user_list = df['user'].unique().tolist()
